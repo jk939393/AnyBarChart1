@@ -8,5 +8,6 @@
   "https://researchbutler-e010dd4624b1.herokuapp.com/.well-known/:splat"
   "https://anybarchart-97950e91472a.herokuapp.com/.well-known/:splat"
   status = 200
-[[headers]]
   for = "/*.yaml"
+  [headers.values]
+    Content-Type = "text/yaml"
