@@ -2,13 +2,22 @@
   from = "/chart/bar/*"
   to ="https://anybarchart-97950e91472a.herokuapp.com/chart/bar/:splat"
   status = 200
+
+[[redirects]]
   from = "/instructions/*"
   to ="https://anybarchart-97950e91472a.herokuapp.com/instructions/:splat"
   status = 200
+
 [[redirects]]
   from = "/.well-known/*"
   to = "https://anybarchart-97950e91472a.herokuapp.com/.well-known/:splat"
   status = 200
-  for = "/*.yaml"
-  [headers.values]
-    Content-Type = "text/yaml"
+
+[[redirects]]
+  from = "/*.yaml"
+  to = "/path/to/destination" # This seems to be missing. Add the appropriate destination.
+  status = 200
+
+[headers.values]
+  Content-Type = "text/yaml"
+
