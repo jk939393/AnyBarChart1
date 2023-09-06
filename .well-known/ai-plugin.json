@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "AnyBarChart",
+  "name_for_model": "AnyBarChart",
+  "description_for_human": "Create captivating bar charts with ease. Input your data and customize labels, colors, and titles for a tailored visual experience.",
+  "description_for_model": "Create a highly customizable bart chart with AnyBarChart",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:5003/openapi.yaml"
+  },
+  "logo_url": "http://localhost:5003/logo.png",
+  "contact_email": "legal@example.com",
+  "legal_info_url": "http://example.com/legal"
+}

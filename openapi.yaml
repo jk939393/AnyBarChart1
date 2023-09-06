@@ -1,0 +1,161 @@
+openapi: 3.0.1
+info:
+  title: AnyBarChart
+  description: An API to generate charts based on query parameters.
+  version: 'v1.0'
+servers:
+  - url: http://localhost:5003
+paths:
+  /instructions:
+    get:
+      operationId: instructions
+      summary: Get instructions on how to use anychart or bar charts.
+      responses:
+        '200':
+          description: Returns instructions for using the API.
+  /chart/bar/{query}:
+    get:
+      operationId: get_bar_chart
+      summary: Generate a bar chart based on the query string
+      parameters:
+        - name: FontColor
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Change the font color.
+        - name: customLabels
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Comma-separated custom labels for data points.
+        - name: Title
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Title of the chart.
+        - name: xAxisLabel
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Label for the x-axis.
+        - name: yAxisLabel
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Label for the y-axis.
+        - name: query
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Query string containing datasets separated by a pipe.
+        - name: categoryLabel1
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Label for the first dataset.
+        - name: categoryLabel2
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Label for the second dataset.
+        - name: categoryLabel3
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Label for the third dataset.
+        - name: categoryLabel4
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Label for the fourth dataset.
+        - name: color1
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Background color for the first dataset.
+        - name: color2
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Background color for the second dataset.
+        - name: color3
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Background color for the third dataset.
+        - name: color4
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Background color for the fourth dataset.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chart_url:
+                    type: string
+        "500":
+          description: Internal Server Error
+  /chart/pie/{query}:
+    get:
+      operationId: get_pie_chart
+      summary: Generate a pie chart based on a query of comma-separated integers
+      parameters:
+        - name: query
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chart_url:
+                    type: string
+        "500":
+          description: Internal Server Error
+  /chart/line/{query}:
+    get:
+      operationId: get_line_chart
+      summary: Generate a line chart based on a query of pipe-separated, comma-separated integers
+      parameters:
+        - name: query
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chart_url:
+                    type: string
+        "500":
+          description: Internal Server Error
+

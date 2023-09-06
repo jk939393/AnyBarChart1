@@ -1,0 +1,4 @@
+Label1: "Sales"
+Data1: "10,20,30,40,50"
+Label2: "Expenses"
+Data2: "5,15,25,35,45"
