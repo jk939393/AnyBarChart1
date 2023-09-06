@@ -11,7 +11,7 @@
     "type": "openapi",
     "url": "https://anychart.anygpt.ai/openapi.yaml"
   },
-  "logo_url": "http://localhost:5003/logo.png",
+  "logo_url": "http://anychart.anygpt.ai/logo.png",
   "contact_email": "researchbutler@anygpt.ai",
   "legal_info_url": "http://anychart.anygpti.ai/legal"
 }
