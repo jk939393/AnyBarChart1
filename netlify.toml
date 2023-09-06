@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/scholar/*"
+  to = "http://anygpt.ai/:splat"
+  status = 200
