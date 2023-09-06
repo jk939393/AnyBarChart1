@@ -4,7 +4,7 @@
   status = 200
 [[redirects]]
   from = "/.well-known/*"
-  to "https://anybarchart-97950e91472a.herokuapp.com/.well-known/:splat"
+  to = "https://anybarchart-97950e91472a.herokuapp.com/.well-known/:splat"
   status = 200
   for = "/*.yaml"
   [headers.values]
