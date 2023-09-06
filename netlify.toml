@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/scholar/*"
-  to ="https://anybarchart-97950e91472a.herokuapp.com/scholar/:splat"
+  from = "/chart/bar/*"
+  to ="https://anybarchart-97950e91472a.herokuapp.com/chart/bar/:splat"
   status = 200
 [[redirects]]
   from = "/.well-known/*"
