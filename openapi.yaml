@@ -4,7 +4,7 @@ info:
   description: An API to generate charts based on query parameters.
   version: 'v1.0'
 servers:
-  - url: http://localhost:5003
+  - url: http://anychart.anygpt.ai
 paths:
   /instructions:
     get:
