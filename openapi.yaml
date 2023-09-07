@@ -4,7 +4,7 @@ info:
   description: An API to generate charts based on query parameters.
   version: 'v1.0'
 servers:
-  - url: https://anychart.anygpt.ai
+  - url: https://anybarchart-97950e91472a.herokuapp.com
 paths:
   /instructions:
     get:
