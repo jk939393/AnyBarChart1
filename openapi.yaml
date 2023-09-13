@@ -6,13 +6,7 @@ info:
 servers:
   - url: https://anybarchart-97950e91472a.herokuapp.com
 paths:
-  /instructions:
-    get:
-      operationId: instructions
-      summary: Get instructions on how to use anychart or bar charts.
-      responses:
-        '200':
-          description: Returns instructions for using the API.
+ 
   /chart/bar/{query}:
     get:
       operationId: get_bar_chart
@@ -119,11 +113,36 @@ paths:
       operationId: get_pie_chart
       summary: Generate a pie chart based on a query of comma-separated integers
       parameters:
+        - name: Title
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Title of the pie chart.
+        - name: customLabels
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Comma-separated custom labels for the pie slices.
+        - name: FontColor
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Font color for the title and labels.
+        - name: backgroundColors
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Comma-separated background colors for the pie slices.
         - name: query
           in: path
           required: true
           schema:
             type: string
+            description: Query string containing comma-separated values for the pie chart data points.
       responses:
         "200":
           description: OK
@@ -136,6 +155,7 @@ paths:
                     type: string
         "500":
           description: Internal Server Error
+
   /chart/line/{query}:
     get:
       operationId: get_line_chart
@@ -146,6 +166,43 @@ paths:
           required: true
           schema:
             type: string
+            description: Query string containing datasets separated by a pipe.
+        - name: label1
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Label for the first dataset.
+        - name: label2
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Label for the second dataset.
+        - name: Title
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Title of the chart.
+        - name: xAxisLabel
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Label for the x-axis.
+        - name: yAxisLabel
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Label for the y-axis.
+        - name: FontColor
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Change the font color.
       responses:
         "200":
           description: OK
