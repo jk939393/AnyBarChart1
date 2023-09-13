@@ -3,10 +3,6 @@
   to ="https://anybarchart-97950e91472a.herokuapp.com/chart/bar/:splat"
   status = 200
 
-[[redirects]]
-  from = "/instructions/"
-  to ="https://anybarchart-97950e91472a.herokuapp.com/instructions/:splat"
-  status = 200
 
 [[redirects]]
   from = "/.well-known/*"
